@@ -70,10 +70,33 @@ module.exports = {
     // delete one user
     async deleteOneUser(req, res) {
         try {
-            const userData = await User.findOneAndDelete({ _id: req.params.userId })
+            const userData = await User.findOneAndDelete({ _id: req.params.userId });
             if (!userData) {
-                return res.status(404).json({ message: 'No user found with this id!' })
+                return res.status(404).json({ message: 'No user found with this id!' });
             }
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    },
+
+    // add new friend to user's friend list
+    async addNewFriend(req, res) {
+        try {
+            const userData = await User.findOneAndUpdate(
+                // same as how we update one user, need to find user by checking user id
+                { _id: req.params.userId },
+                // $addToSet is checking if we have this friend id already or not,
+                // it only add friend if you don't have this friend yet
+                { $addToSet: { friends: req.params.friendId } },
+                // returns new data instead of old one like how we did on update user, but we are only add friend id, 
+                // so we don't have to check validate or not
+                { new: true }
+            );
+            if (!userData) {
+                return res.status(404).json({ message: 'No user found with this id!' });
+            }
+            res.json(userData);
         } catch (err) {
             console.log(err);
             res.status(500).json(err);
