@@ -74,6 +74,7 @@ module.exports = {
             if (!userData) {
                 return res.status(404).json({ message: 'No user found with this id!' });
             }
+            res.json({ message: 'User deleted!' });
         } catch (err) {
             console.log(err);
             res.status(500).json(err);
