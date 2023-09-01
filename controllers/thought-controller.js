@@ -6,7 +6,8 @@ module.exports = {
         try {
             const thoughtData = await Thought.find()
                 // -1 is descending order, and shows by newest to oldest
-                .sort({ createdAt: -1 });
+                .sort({ createdAt: -1 })
+                .select('-__v');
             res.json(thoughtData);
         } catch (err) {
             console.log(err);
@@ -17,8 +18,8 @@ module.exports = {
     // get one thought by find thoughtId
     async getOneThought(req, res) {
         try {
-            const thoughtData = await Thought.findOne({ _id: req.params.thoughtId });
-
+            const thoughtData = await Thought.findOne({ _id: req.params.thoughtId })
+                .select('-__v');
             if (!thoughtData) {
                 return res.status(404).json({ message: 'No thought found with this id!' });
             }
