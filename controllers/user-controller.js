@@ -15,7 +15,7 @@ module.exports = {
     },
 
     // find one user
-    async getOneUsers(req, res) {
+    async getOneUser(req, res) {
         try {
             const userData = await User.find({ _id: req.params.userId })
                 // do not select version key
