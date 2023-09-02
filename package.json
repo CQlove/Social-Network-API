@@ -1,4 +1,15 @@
 {
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "Build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. This is the back-end only",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "moment": "^2.29.4",
