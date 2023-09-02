@@ -36,7 +36,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Description
 
-This is a back-end social network API; it can (add, update, delete) users, thoughts, reactions, friends.
+This is a back-end social network API; it can (add, update, delete) users, thoughts, reactions, and friends.
 You need to follow [Installation](#installation) to make sure install and open the software correctly.
 
 ## Installation
@@ -132,3 +132,8 @@ If you have anyother quesiton, feel free to reach me out.
 [Link to the code repository](https://github.com/CQlove/Social-Network-API)
 
 ## Walkthrough Video
+
+https://github.com/CQlove/Social-Network-API/assets/128104973/6a33fb81-2e1d-4639-a782-097cc2608399
+
+
+
